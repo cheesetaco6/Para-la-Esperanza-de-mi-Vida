@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola, princess</title>
+    <link rel="stylesheet" href="styles_mensaje.css">
+    <link href="https://fonts.googleapis.com/css2?family=More+Sugar&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="audioPlayer" loop="">
+        <source src="ssvid.net--Cuarteto-de-Nos-Enamorado-tuyo-reinterpretación-en-piano.mp3" type="audio/webm">
+    </audio>
+    <script>
+    // Intenta reproducir el audio automáticamente
+    window.addEventListener('DOMContentLoaded', function() {
+      var audio = document.getElementById('audioPlayer');
+      var playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function(error) {
+          // Si el navegador bloquea el autoplay, muestra un mensaje para pedir clic
+          var msg = document.createElement('div');
+          msg.innerHTML = 'Haz clic en cualquier parte para activar la música';
+          msg.style.position = 'fixed';
+          msg.style.top = '0';
+          msg.style.left = '0';
+          msg.style.width = '100vw';
+          msg.style.height = '100vh';
+          msg.style.background = 'rgba(0,0,0,0.7)';
+          msg.style.color = 'white';
+          msg.style.display = 'flex';
+          msg.style.alignItems = 'center';
+          msg.style.justifyContent = 'center';
+          msg.style.fontSize = '2rem';
+          msg.style.zIndex = '9999';
+          msg.style.cursor = 'pointer';
+          document.body.appendChild(msg);
+          msg.addEventListener('click', function() {
+            audio.play();
+            msg.remove();
+          });
+        });
+      }
+    });
+    </script>
+    <video autoplay muted loop id="bg-video">
+        <source src="love.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
+
+    <div class="content">
+        <p class="typewriter" data-text="<span class='main-title'>Enamorado tuyo</span><br>He conocido hermosas personas en mi vida, <br> pero solo he podido conectar verdaderamente contigo <br> solo tú has podido cambiar mi mundo y llenarlo de amor. <br> Por eso hoy y siempre estaré...<br> ¡Enamorado tuyo!">
+            </p>
+        <p class="pd-note" data-text="Pd: Solo sera virtual por este año, <br> pero el próximo... espera y verás. <br> Abre el siguiente archivo que te envié...">
+            </p>
+        <img src="2.png" alt="Flores animadas" class="flowers-image flowers-image-animated">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+<!-- 
+
+Contáctame:
+
+    * Invitame un café
+ https://buymeacoffee.com/alexx.dev
+
+    * Portafolio Web
+ https://alexxdev.vercel.app
+
+    * Sigueme en tiktok
+ https://www.tiktok.com/@alexx.dev?is_from_webapp=1&sender_device=pc 
+ 
+    *Canal de WhatsApp
+ https://whatsapp.com/channel/0029VazQEXq90x2vIdNkrH1p
+
+-->
+
+</html>
